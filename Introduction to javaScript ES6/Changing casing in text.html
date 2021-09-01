@@ -4,3 +4,21 @@ str = str.toLowerCase(); Output = syscloud
 
 var name = prompt(what is your name);
 alert("Hello" + name);
+
+
+<!-- Change first char of any given string -->
+  
+  <script>
+    var name = prompt("what is your name");
+	var first_char = name.slice(0,1); <!-- take first char of the name --> 
+	first_char = toUpperCase(first_char); <!-- change first char into upper case -->
+	var rest_chars = name.slice(1,name.length); <!-- store rest of the name -->
+	var final_name = first_char+rest_chars;
+	alert(final_name);  <!-- now concatinate first_char and rest of the char -->
+
+  <!--
+    If my input will be -:
+    Input : syscloud
+    Output : Syscloud
+    -->
+  </script>
