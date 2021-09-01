@@ -1,0 +1,104 @@
+<!--key points behind this problem is :
+  If you will refresh the page then you will get two random images from the given images.
+  You need to write javaScript code in this fashion if you will refresh then the code able 
+  to select two random images from the given images
+-->
+
+<!doctype html>
+<html>
+ <head>
+  <title>Boss level challenge 1</title>
+ <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
+ <style> 
+  .container {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+}
+
+.dice {
+  text-align: center;
+  display: inline-block;
+
+}
+
+body {
+  background-color: #393E46;
+}
+
+h1 {
+  margin: 10px;
+  font-family: consolas;
+  text-shadow: 2px 0 #232931;
+  font-size: 4rem;
+  color: #4ECCA3;
+}
+
+p {
+  font-size: 2rem;
+  color: #4ECCA3;
+  font-family: consolas;
+}
+
+img {
+  width: 80%;
+}
+
+footer {
+  margin-top: 5%;
+  color: #EEEEEE;
+  text-align: center;
+  font-family: consolas;
+
+}
+
+ </style>
+ </head>
+ 
+ 
+ <body>
+    <div class="container">
+      <h1>Refresh Me</h1>
+
+      <div class="dice">
+        <p>Player 1</p>
+        <img class="img1" src="images/dice6.png">
+      </div>
+
+      <div class="dice">
+        <p>Player 2</p>
+        <img class="img2" src="images/dice6.png">
+      </div>
+
+    </div>
+<script>
+	
+var randomNumber1 = Math.floor(Math.random() * 6) + 1; // used to generate random number from 1-6
+var randomDiceImage = "dice" + randomNumber1 + ".png"; //used to collabe the number with the given images dice1.png - dice6.png
+var randomImageSource = "images/" + randomDiceImage; //used to make the path of the given images images/dice1.png - images/dice6.png
+var image1 = document.querySelectorAll("img")[0];
+image1.setAttribute("src", randomImageSource);
+
+var randomNumber2 = Math.floor(Math.random() * 6) + 1; // used to generate random number from 1-6
+var randomImageSource2 = "images/dice" + randomNumber2 + ".png"; //used to collabe the number with the given images dice1.png - dice6.png
+document.querySelectorAll("img")[1].setAttribute("src", randomImageSource2);
+
+//If player 1 wins
+if (randomNumber1 > randomNumber2) //if the random generated number1 is greater then number2 then player1 will be the winner and 
+{
+  document.querySelector("h1").innerHTML = "🚩 Player 1 Wins!";
+  alert("Player 1 Wins the match!");
+}
+else if (randomNumber2 > randomNumber1) 
+{ // if the random generated number2 is greater then number2 then player2 will be the winner 
+  document.querySelector("h1").innerHTML = "🚩 Player 2 Wins!";
+  alert("Player 2 Wins the match!");
+}
+else //if both are equal then match will be draw
+{
+  document.querySelector("h1").innerHTML = "Draw!";
+  alert("Match Draw");
+}
+</script>	
+ </body>
+</html>
