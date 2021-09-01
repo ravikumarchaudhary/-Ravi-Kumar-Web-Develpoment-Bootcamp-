@@ -9,13 +9,13 @@ alert("Hello" + name);
 <!-- Change first char of any given string -->
   
   <script>
-    var name = prompt("what is your name");
-	var first_char = name.slice(0,1); // take first char of the name 
-	first_char = toUpperCase(first_char); // change first char into upper case 
-	var rest_chars = name.slice(1,name.length); // store rest of the name
-	var final_name = first_char+rest_chars;
-	alert(final_name);  // now concatinate first_char and rest of the char 
-	  
+        var name = prompt("what is your name"); //enter any string 
+	var first_char = name.slice(0,1);  // take its first charactar 
+	first_char = first_char.toUpperCase();  // and then change it into uppercase
+	var rest_chars = name.slice(1,name.length); // take its rest characters
+	rest_chars = rest_chars.toLowerCase(); // and then chage it into lowercase
+	var final_name = first_char+rest_chars; // now concatenate first char and rest of the string 
+	alert(final_name); // this is my final output
    /* If my input will be -:
     Input : syscloud
     Output : Syscloud */
