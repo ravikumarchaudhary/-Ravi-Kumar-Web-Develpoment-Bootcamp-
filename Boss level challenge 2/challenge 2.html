@@ -1,9 +1,9 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
   <meta charset="utf-8">
-  <title>Simon Game</title>
+  <title>Boss level challenge 2 (Simon game)</title>
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
   <style>
   body {
@@ -94,9 +94,9 @@
    
    <script>
    
-var buttonColours = ["red", "blue", "green", "yellow"];
-
-var gamePattern = [];
+var buttonColours = ["red","blue","green","yellow"];
+//above array will use for colors
+var gamePattern = [];//used to add generated color 
 var userClickedPattern = [];
 
 var started = false;
@@ -121,8 +121,8 @@ $(".btn").click(function() {
   checkAnswer(userClickedPattern.length-1);
 });
 
-function checkAnswer(currentLevel) {
-
+function checkAnswer(currentLevel) 
+{
     if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
       if (userClickedPattern.length === gamePattern.length){
         setTimeout(function () {
@@ -141,14 +141,18 @@ function checkAnswer(currentLevel) {
       startOver();
     }
 }
-
-
-function nextSequence() {
+function nextSequence()// this function used to generate new random number bw 0-3 
+{
   userClickedPattern = [];
   level++;
   $("#level-title").text("Level " + level);
   var randomNumber = Math.floor(Math.random() * 4);
   var randomChosenColour = buttonColours[randomNumber];
+  //above line will works like this
+  /*
+    1. random number will generate and then 
+    2. buttonsColours[random number] will gives us the color from the color array	
+  */
   gamePattern.push(randomChosenColour);
 
   $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
@@ -162,7 +166,8 @@ function animatePress(currentColor) {
   }, 100);
 }
 
-function playSound(name) {
+function playSound(name) //function used to play sound accordingly...
+{
   var audio = new Audio("sounds/" + name + ".mp3");
   audio.play();
 }
