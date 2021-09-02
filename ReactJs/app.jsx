@@ -1,6 +1,7 @@
-import react from "react";
-import header from "./header";
-import footer from "./footer";
+import React from "react";
+import Header from "./header";
+import Footer from "./footer";
+import Note from "./Note";
 function app()
 {
   return (<div>
