@@ -1,0 +1,37 @@
+// SQL commands implementation
+
+//Create and insert command in SQL....
+-- create a table
+CREATE TABLE students (id INTEGER PRIMARY KEY,name TEXT NOT NULL, gender TEXT NOT NULL);
+
+-- insert some values
+INSERT INTO students VALUES (1, 'Ravi', 'M');
+INSERT INTO students VALUES (2, 'PB', 'F');
+
+-- fetch some values
+SELECT * FROM students WHERE gender = 'F';
+
+
+SQL COMMANDS
+1. DDL (Data Definition language)
+  a) CREATE -> used to create a new table in the database. 
+  b) DROP -> used to delete both the structure and record stroed in the table.
+  c) ALTER -> used to alter the structure of the database. This change could be either to modify the characterstics of and existing attribute or probalbly to add a new atribute.
+  d) TRUNCATE -> used to delete all the rows from the table and free the space containg that table.
+
+2. DML (Data manipulation language)
+  a) INSERT -> used to insert data into the row of a table.
+  b) UPDATE -> used to update or modify the value of a column in the table.
+  c) DELETE -> used to remove one or more row from a table.
+
+3. DCL (Data control language)
+  a) GRANT -> used to give user access privileges to a database.
+  b) REVOKE -> used to take back permissions from the user.
+
+4. TCL (Transcation control language)
+  a) COMMIT -> used to save all the transaction to the database.
+  b) ROLLBACK -> used to undo transcations that have not already been saved to the database.
+  c) SAVEPOINT -> used to roll the transaction back to a certain point without rolling back the entire transaction.
+
+5. DQL (Data Query language)
+  a) SELECT -> used to select the attribute based on the condition described by where clause.
