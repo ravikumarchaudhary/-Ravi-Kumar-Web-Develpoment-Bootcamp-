@@ -6,7 +6,8 @@ function app()
 {
   return (<div>
     <Header/>
-    </Footer>
+          <Note/>
+    <Footer/>
   </div>);
 }
 export default App;
